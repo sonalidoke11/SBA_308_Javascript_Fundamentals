@@ -75,24 +75,38 @@
         }
     ];
   
-  function getLearnerData(course, ag, submissions) {
-    // here, we would process this data to achieve the desired result.
-    const result = [
-      {
-        id: 125,
-        avg: 0.985, // (47 + 150) / (50 + 150)
-        1: 0.94, // 47 / 50
-        2: 1.0 // 150 / 150
-      },
-      {
-        id: 132,
-        avg: 0.82, // (39 + 125) / (50 + 150)
-        1: 0.78, // 39 / 50
-        2: 0.833 // late: (140 - 15) / 150
-      }
-    ];
+  function isValidCourse(CourseInfo, AssignmentGroup) {
+    if(CourseInfo.id === AssignmentGroup.course_id){return true} 
+  }
+
+  function getLearnerData(CourseInfo, AssignmentGroup, LearnerSubmissions) {
+
+    // If an AssignmentGroup does not belong to its course (mismatching course_id), your program should throw an error, letting the user know that the input was invalid. Similar data validation should occur elsewhere within the program.
+    
+    let isValid
+    isValid = isValidCourse(CourseInfo, AssignmentGroup)
+    console.log(isValid);
+    
+    if (!isValid) {
+      throw new Error("Invalid input: AssignmentGroup does not belong to the course.");
+    }
+
+    // const result = [
+    //   {
+    //     id: 125,
+    //     avg: 0.985, // (47 + 150) / (50 + 150)
+    //     1: 0.94, // 47 / 50
+    //     2: 1.0 // 150 / 150
+    //   },
+    //   {
+    //     id: 132,
+    //     avg: 0.82, // (39 + 125) / (50 + 150)
+    //     1: 0.78, // 39 / 50
+    //     2: 0.833 // late: (140 - 15) / 150
+    //   }
+    // ];
   
-    return result;
+    //***********************************************************return result;
   }
   
   const result = getLearnerData(CourseInfo, AssignmentGroup, LearnerSubmissions);
