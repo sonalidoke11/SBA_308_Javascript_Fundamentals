@@ -1,10 +1,10 @@
-Description :
+**Description :**
 
 Analyze and transform given data such that the output of your program is an array of objects.
 
-Project Link : https://github.com/sonalidoke11/SBA_308_Javascript_Fundamentals.git
+**Project Link :** https://github.com/sonalidoke11/SBA_308_Javascript_Fundamentals.git
 
-Technical Specification:
+**Technical Specification:**
 1) Created function getLearnerData() which accepts arguments and process object data to calculate grades and display data in array of objects
 
 2) Declared variables using let and const 
